@@ -1,5 +1,8 @@
 // name_list.cpp
 
+// internal users, use engine GetPlayerName
+// external users, reverse engine GetPlayerName and replace by your rpm calls. will give you namelist too btw
+
 __int64 __fastcall obtain_name_list(__int64 a1)
 {
     __int64 v1; // rdi
@@ -29,7 +32,8 @@ __int64 __fastcall obtain_name_list(__int64 a1)
     }
     sub_7FF64EC5CFC0(v1);
     if (v4)
-        result = name_list[2 * *(int*)(v1 + 56) - 2];// name_list - base = B97E0D0
+        result = name_list[2 * *(int*)(v1 + 56) - 2];// name_list = CCheat::Variables.Get()->NameListObject
     else
         result = name_list[2 * *(int*)(v1 + 56) - 1];
     return result;
+}
